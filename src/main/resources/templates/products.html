@@ -8,8 +8,9 @@
     <h1>Products</h1>
     <ul th:each="product: ${products}">
         <li>
-            <a th:text="${product.name}" href="#"></a>
+            <a th:text="${product.id} + ' ' + ${product.name}" th:href="'/products/' + ${product.id}"></a>
         </li>
     </ul>
+    <a href="/products/add">Add product</a>
 </body>
 </html>

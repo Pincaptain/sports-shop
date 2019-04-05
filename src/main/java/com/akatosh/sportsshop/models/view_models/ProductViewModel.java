@@ -1,16 +1,14 @@
-package com.akatosh.sportsshop.models;
+package com.akatosh.sportsshop.models.view_models;
 
-import com.akatosh.sportsshop.models.view_models.ProductViewModel;
-
-public class Product {
+public class ProductViewModel {
     private long id;
     private String name;
     private String description;
     private String link;
-    private Category category;
-    private Manufacturer manufacturer;
+    private long category;
+    private long manufacturer;
 
-    public Product(long id, String name, String description, String link, Category category, Manufacturer manufacturer) {
+    public ProductViewModel(long id, String name, String description, String link, long category, long manufacturer) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -51,19 +49,19 @@ public class Product {
         this.link = link;
     }
 
-    public Category getCategory() {
+    public long getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(long category) {
         this.category = category;
     }
 
-    public Manufacturer getManufacturer() {
+    public long getManufacturer() {
         return manufacturer;
     }
 
-    public void setManufacturer(Manufacturer manufacturer) {
+    public void setManufacturer(long manufacturer) {
         this.manufacturer = manufacturer;
     }
 }

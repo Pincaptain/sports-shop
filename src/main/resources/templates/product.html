@@ -6,6 +6,8 @@
 </head>
 <body>
     <h1>Product</h1>
-    <h3 th:text="${product.name}"></h3>
+    <img th:src=${product.link} width="200" height="200" alt="Product image">
+    <h3 th:text=${product.name}></h3>
+    <p th:text=${product.description}></p>
 </body>
 </html>

@@ -1,10 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Add Product</title>
 </head>
 <body>
     <h1>Add Product</h1>
+    <form method="POST"
+               action="/products/add" modelAttribute="productViewModel" id="product-form">
+        <table>
+            <tr>
+                <td><label name="id">Id</label></td>
+                <td><input type="number" name="id"/></td>
+            </tr>
+            <tr>
+                <td><label name="name">Name</label></td>
+                <td><input name="name"/></td>
+            </tr>
+            <tr>
+                <td><label name="description">Description</label></td>
+                <td><input name="description"/></td>
+            </tr>
+            <tr>
+                <td><label name="link">Link</label></td>
+                <td><input name="link"/></td>
+            </tr>
+            <tr>
+                <td><label name="category">Category</label></td>
+                <td>
+                    <select id="category" name="category">
+                        <option th:selected="${category.id==1}" name="category" th:each="category: ${categories}" th:value=*{category.id} th:text=${category.name}></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label name="manufacturer">Manufacturer</label></td>
+                <td>
+                    <select id="manufacturer" name="manufacturer">
+                        <option th:selected="${manufacturer.id==1}" name="manufacturer" th:each="manufacturer: ${manufacturers}" th:value=*{manufacturer.id} th:text=${manufacturer.name}></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"/></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
